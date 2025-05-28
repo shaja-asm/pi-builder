@@ -1,6 +1,9 @@
 FROM hypriot/image-builder:latest
 
-RUN apt-get update && \
+RUN sed -i 's/stretch/bookworm/g' /etc/apt/sources.list && \
+    sed -i 's/bookworm\/updates/bookworm-security/' /etc/apt/sources.list && \
+    sed -i '/bookworm-updates/d' /etc/apt/sources.list && \
+    apt-get update && \
     DEBIAN_FRONTEND=noninteractive apt-get install -y \
     binfmt-support \
     qemu \
