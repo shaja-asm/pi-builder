@@ -20,7 +20,7 @@ This guide serves the purpose of detailing the build process and suggesting a cu
 
 ## Developing
 
-Issuing a PR will build the image. We will merge PRs aligned and suitable to be included in Public Lab's Camera Kits, at the discretion of the maitainers. You are encouraged to fork your own repository and experiment with preparing your own images!
+Issuing a PR will build the image. We will merge PRs aligned and suitable to be included in Public Lab's Camera Kits, at the discretion of the maintainers. You are encouraged to fork your own repository and experiment with preparing your own images!
 
 - Repository (GitLab): https://gitlab.com/publiclab/image-builder-rpi
 
