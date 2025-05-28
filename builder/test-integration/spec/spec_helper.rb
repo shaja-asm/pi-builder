@@ -19,3 +19,10 @@ end
 
 set :host,        options[:host_name] || host
 set :ssh_options, options
+
+# expose expected tool versions via RSpec configuration
+RSpec.configure do |config|
+  config.add_setting :docker_compose_version, default: ENV['DOCKER_COMPOSE_VERSION']
+  config.add_setting :docker_machine_version, default: ENV['DOCKER_MACHINE_VERSION']
+  config.add_setting :docker_ce_version,      default: ENV['DOCKER_CE_VERSION']
+end
