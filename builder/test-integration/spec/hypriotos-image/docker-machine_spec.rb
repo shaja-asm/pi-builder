@@ -6,8 +6,10 @@ describe file('/usr/local/bin/docker-machine') do
   it { should be_owned_by 'root' }
 end
 
+expected_version = RSpec.configuration.docker_machine_version || '0.14.0'
+
 describe command('docker-machine --version') do
-  its(:stdout) { should match /0.14.0/m }
+  its(:stdout) { should match /#{Regexp.escape(expected_version)}/m }
   its(:exit_status) { should eq 0 }
 end
 

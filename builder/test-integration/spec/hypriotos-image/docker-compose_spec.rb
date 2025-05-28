@@ -6,8 +6,10 @@ describe file('/usr/local/bin/docker-compose') do
   it { should be_owned_by 'root' }
 end
 
+expected_version = RSpec.configuration.docker_compose_version || '1.21.1'
+
 describe command('docker-compose --version') do
-  its(:stdout) { should match /1.21.1/m }
+  its(:stdout) { should match /#{Regexp.escape(expected_version)}/m }
   its(:exit_status) { should eq 0 }
 end
 
