@@ -90,7 +90,7 @@ fi
 # verify checksum of the ready-made raw image
 echo "${RAW_IMAGE_CHECKSUM} ${BUILD_RESULT_PATH}/${RAW_IMAGE}.zip" | sha256sum -c -
 
-unzip -p "${BUILD_RESULT_PATH}/${RAW_IMAGE}" > "/${HYPRIOT_IMAGE_NAME}"
+unzip -p "${BUILD_RESULT_PATH}/${RAW_IMAGE}.zip" > "/${HYPRIOT_IMAGE_NAME}"
 
 # create the image and add root base filesystem
 guestfish -a "/${HYPRIOT_IMAGE_NAME}"<<_EOF_
