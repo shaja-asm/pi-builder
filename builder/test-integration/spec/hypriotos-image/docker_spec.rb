@@ -15,7 +15,7 @@ describe command('dpkg -l docker-ce') do
   if package_version
     its(:stdout) { should match /#{Regexp.escape(package_version)}/ }
   else
-    its(:stdout) { should match /18.04.0~ce~3-0~raspbian/ }
+    its(:stdout) { should match /24.0.5~ce~3-0~debian/ }
   end
   its(:stdout) { should match /armhf/ }
   its(:exit_status) { should eq 0 }
@@ -95,7 +95,7 @@ docker_version =
     ver = ver.split('~').first
     "#{ver}-ce"
   else
-    '18.04.0-ce'
+    '24.0.5-ce'
   end
 
 describe command('docker -v') do

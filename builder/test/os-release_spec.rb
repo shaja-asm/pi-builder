@@ -7,8 +7,8 @@ describe "Root filesystem" do
     expect(stdout).to contain('debian')
   end
 
-  it "is debian version stretch" do
-    expect(stdout).to contain('stretch')
+  it "is debian version bookworm" do
+    expect(stdout).to contain('bookworm')
   end
 
   it "is a HypriotOS" do
